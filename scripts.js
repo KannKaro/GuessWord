@@ -9,33 +9,31 @@ let words = [ //slowa ktore sa uzywane do gry
     'KRAWAT',
     'CHMURA'
 ]
-
-//Ponizej tworze timer ktory odlicza od 30 do 0
-let maxTime = 30 // maksymalny czas
-let oneSecond = 1000 // jedna sekunda to 1000 milisekund
+let showGameWord = this.document.getElementById('word')
+let showTime = document.getElementById('time')
+let checkWord = document.getElementById('check')
+let maxTime = 30
+let oneSecond = 1000
 let randomWord = words[Math.floor(Math.random() * words.length)] //wybieram losowe slowo z listy
 // Ponizej losuje kolejnosc literek w slowie
 let shuffledLetters = randomWord.split('').sort(function () { return 0.5 - Math.random() }).join('');
-//Ponizej wyswietlam juz wylosowane i pomieszane slowo na ekran
 console.log(randomWord)
-// funkcja sie wykonuje gdy wlacza sie strona
+
 window.addEventListener('load', function () {
-    this.document.getElementById('word').innerHTML = shuffledLetters
+    showGameWord.innerHTML = shuffledLetters
 })
 
 const timer = setInterval(function () {
     maxTime--
-    document.getElementById('time').innerHTML = maxTime + 's';
+    showTime.innerHTML = maxTime + 's';
     //Ponizej jezeli timer wejdzie na 0 to strona sie odswieza
     if (maxTime === 0) {
         window.location.reload()
     }
-}, oneSecond) // funkcja wykonuje sie co 1 sekunde
+}, oneSecond)
 
-//Sprawdzanie slowa
-document.getElementById('check').addEventListener('click', function () {
+checkWord.addEventListener('click', function () {
     let yourInput = document.getElementById('text-container').value
-    //Gdy zgadniesz slowo wyskakuje alert z gratulacjami, toUpperCase powoduje ze mozesz pisac z malych liter
     if (yourInput.toUpperCase() === randomWord) {
         alert('Brawo zgadles')
         window.location.reload()
