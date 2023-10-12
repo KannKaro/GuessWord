@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guess Word</title>
+    <link rel='stylesheet' href='style.css'>
+</head>
+
+<body>
+    <div class="game-container">
+        <h2>Guess Word</h2>
+        <div class="content">
+            <p class="word" id="word"></p>
+            <div class="details">
+                <p class="time">Time left: </p> <span id="time"><b>30</b>s</span>
+            </div>
+            <input type="text" id="text-container">
+            <div class="buttons">
+                <button class="refresh" onClick="window.location.reload()">Refresh</button>
+                <button class="check" id="check">Check</button>
+            </div>
+        </div>
+    </div>
+</body>
+<script src='scripts.js'></script>
+
+</html>

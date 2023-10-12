@@ -1,0 +1,18 @@
+body {
+    background-color: #668ba4;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 70vh;
+}
+
+.game-container {
+    background-color: #dde0ab;
+    width: 400px;
+    height: 400px;
+    text-align: center;
+    font-size: 160%;
+    box-shadow: 4px 4px 4px 4px;
+    border-radius: 30px;
+}
+
