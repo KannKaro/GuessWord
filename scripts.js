@@ -40,7 +40,7 @@ const timer = setInterval(function () {
 
 checkWord.addEventListener('click', function () {
     let yourInput = document.getElementById('yourInput').value
-    if (yourInput.toLowwrCase() === randomWord) {
+    if (yourInput.toLowerCase() === randomWord) {
         alert('Brawo zgadles')
         window.location.reload()
     }
